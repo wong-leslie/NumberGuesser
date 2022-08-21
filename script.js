@@ -7,11 +7,13 @@ const generateTarget = () => Math.floor(Math.random()*10)
 // console.log(generateTarget());
 
 
+const getAbsoluteDistance = (numInput, winningNum) => Math.abs(winningNum - numInput)
+
 //compares guess made by computer and human(user) to see which is closest to the set/target number
 //if computer is closer, it wins(false) and if human is closer or within same prox as computer, the user wins (true)
 const compareGuesses = (humanGuess, computerGuess, targetNum) =>{
-    const humanProx = Math.abs(targetNum - humanGuess);
-    const computerProx = Math.abs(targetNum - computerGuess);
+    const humanProx = getAbsoluteDistance(humanGuess, targetNum);
+    const computerProx = getAbsoluteDistance(computerGuess, targetNum);
 
     if (computerProx > humanProx || computerProx === humanProx){
         return true;
