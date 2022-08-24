@@ -12,6 +12,10 @@ const getAbsoluteDistance = (numInput, winningNum) => Math.abs(winningNum - numI
 //compares guess made by computer and human(user) to see which is closest to the set/target number
 //if computer is closer, it wins(false) and if human is closer or within same prox as computer, the user wins (true)
 const compareGuesses = (humanGuess, computerGuess, targetNum) =>{
+    if (humanGuess < 0 || humanGuess > 9) {
+        alert("Please enter valid number (0-9");
+        
+    }
     const humanProx = getAbsoluteDistance(humanGuess, targetNum);
     const computerProx = getAbsoluteDistance(computerGuess, targetNum);
 
